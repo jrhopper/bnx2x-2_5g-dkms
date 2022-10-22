@@ -48,7 +48,7 @@
 
 #include "bnx2x_hsi.h"
 
-#include "cnic_if.h"
+#include "../cnic_if.h"
 
 #define BNX2X_MIN_MSIX_VEC_CNT(bp)		((bp)->min_msix_vec_cnt)
 
@@ -1592,7 +1592,6 @@ struct bnx2x {
 	uint			num_ethernet_queues;
 	uint			num_cnic_queues;
 	int			disable_tpa;
-	int			disable_sfp_tx_fault_detection;
 
 	u32			rx_mode;
 #define BNX2X_RX_MODE_NONE		0
@@ -2408,7 +2407,6 @@ void bnx2x_igu_clear_sb_gen(struct bnx2x *bp, u8 func, u8 idu_sb_id,
 #define ETH_MAX_RX_CLIENTS_E2		ETH_MAX_RX_CLIENTS_E1H
 #endif
 
-#define BNX2X_VPD_LEN			128
 #define VENDOR_ID_LEN			4
 
 #define VF_ACQUIRE_THRESH		3
